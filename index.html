@@ -1,36 +1,7 @@
-penger.html
-DETAILS
-ACTIVITY
-penger.html
-Sharing Info
-Not shared
-General Info
-Type
-HTML
-Size
-258 KB (264,035 bytes)
-Storage used
-258 KB (264,035 bytes)
-Location
-Phonelab
-Owner
-me
-Modified
-16:15 by me
-Opened
-16:22 by me
-Created
-16:15 with Google Drive Web
-Description
-Add a description
-Download permissions
-Viewers can download
-
-
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Untitled</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>projection</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11804,12 +11775,13 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">locale</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span>
+<span class="n">aar</span><span class="o">=</span><span class="mi">12</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#ant år vi vil modelere </span>
 
 
 <span class="n">solgte_prover</span><span class="o">=</span><span class="n">zeros</span><span class="p">(</span><span class="n">aar</span><span class="p">)</span>
@@ -11819,11 +11791,9 @@ div#notebook {
 
 
 
-<span class="n">solgte_enheter</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aar</span><span class="p">)])</span>
-<span class="c1">#solgte_enheter[5:]=solgte_enheter[9] </span>
+<span class="n">solgte_enheter</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aar</span><span class="p">)])</span>
 
 
-<span class="n">aar</span><span class="o">=</span><span class="mi">10</span> <span class="c1">#ant år vi vil modelere </span>
 <span class="n">pris_per_modul</span><span class="o">=</span><span class="mi">1000</span> <span class="c1">#kr inntekt per modul (salgspris-innkjøpspris)</span>
 <span class="n">pris_per_prove</span><span class="o">=</span><span class="mi">40</span> <span class="c1">#kr inntekt per prove (salgspris-innkjøpspris)</span>
 <span class="n">prover</span><span class="o">=</span> <span class="mi">1000</span> <span class="c1">#ant forventet salg per enhet per år</span>
@@ -11858,7 +11828,7 @@ div#notebook {
     
     
 <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">aar</span><span class="p">,</span><span class="n">aar</span><span class="p">),</span><span class="n">inntekt_per_aar</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;år&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;mnd&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;inntekt [kr/år]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -11878,7 +11848,18 @@ div#notebook {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[  100   200   400   800  1600  3200  6400 12800 25600 51200]
+<pre>[  100.           105.94630944   112.24620483   118.9207115    125.99210499
+   133.48398542   141.42135624   149.83070769   158.7401052    168.17928305
+   178.17974363   188.77486254   200.           211.89261887   224.49240966
+   237.841423     251.98420998   266.96797083   282.84271247   299.66141538
+   317.48021039   336.3585661    356.35948726   377.54972507   400.
+   423.78523774   448.98481932   475.682846     503.96841996   533.93594167
+   565.68542495   599.32283075   634.96042079   672.7171322    712.71897451
+   755.09945015   800.           847.57047549   897.96963865   951.365692
+  1007.93683992  1067.87188334  1131.3708499   1198.6456615   1269.92084157
+  1345.43426441  1425.43794902  1510.19890029  1600.          1695.14095097
+  1795.93927729  1902.731384    2015.87367983  2135.74376667  2262.7416998
+  2397.291323    2539.84168315  2690.86852881  2850.87589805  3020.39780058]
 antall enheter solgt per år
 </pre>
 </div>
@@ -11891,83 +11872,90 @@ antall enheter solgt per år
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,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
-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
-i7AoeibJWuA44N+7TTI1bwX+BPhh10Gm6Ejgb
-uC9w0Nu707yyK5Dta2q7gT+Evg6cBcwX1XXdJtq
-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
+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
+AAAAAElFTkSuQmCC
 "
 >
 </div>
@@ -11980,43 +11968,243 @@ FJKkRhaFJKmRRSFJavT/TNeM+KScLHAAAAAASUVORK5CYII=
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>år 1
 Total: 4,200,000 kr  
-Enheter 100
+Enheter 100.0
 
 år 2
-Total: 12,500,000 kr  
-Enheter 200
+Total: 8,549,744 kr  
+Enheter 105.94630943592954
 
 år 3
-Total: 29,100,000 kr  
-Enheter 400
+Total: 13,158,139 kr  
+Enheter 112.2462048309373
 
 år 4
-Total: 62,300,000 kr  
-Enheter 800
+Total: 18,040,562 kr  
+Enheter 118.9207115002721
 
 år 5
-Total: 128,700,000 kr  
-Enheter 1600
+Total: 23,213,310 kr  
+Enheter 125.99210498948732
 
 år 6
-Total: 261,500,000 kr  
-Enheter 3200
+Total: 28,693,645 kr  
+Enheter 133.48398541700342
 
 år 7
-Total: 527,100,000 kr  
-Enheter 6400
+Total: 34,499,858 kr  
+Enheter 141.4213562373095
 
 år 8
-Total: 1,058,300,000 kr  
-Enheter 12800
+Total: 40,651,327 kr  
+Enheter 149.83070768766817
 
 år 9
-Total: 2,120,700,000 kr  
-Enheter 25600
+Total: 47,168,581 kr  
+Enheter 158.74010519681994
 
 år 10
-Total: 4,245,500,000 kr  
-Enheter 51200
+Total: 54,073,370 kr  
+Enheter 168.1792830507429
+
+år 11
+Total: 61,388,740 kr  
+Enheter 178.17974362806785
+
+år 12
+Total: 69,139,105 kr  
+Enheter 188.77486253633867
+
+år 13
+Total: 77,350,330 kr  
+Enheter 200.0
+
+år 14
+Total: 86,049,820 kr  
+Enheter 211.89261887185907
+
+år 15
+Total: 95,266,608 kr  
+Enheter 224.4924096618746
+
+år 16
+Total: 105,031,456 kr  
+Enheter 237.8414230005442
+
+år 17
+Total: 115,376,951 kr  
+Enheter 251.98420997897463
+
+år 18
+Total: 126,337,622 kr  
+Enheter 266.96797083400685
+
+år 19
+Total: 137,950,048 kr  
+Enheter 282.842712474619
+
+år 20
+Total: 150,252,984 kr  
+Enheter 299.66141537533633
+
+år 21
+Total: 163,287,492 kr  
+Enheter 317.48021039363994
+
+år 22
+Total: 177,097,071 kr  
+Enheter 336.3585661014858
+
+år 23
+Total: 191,727,811 kr  
+Enheter 356.3594872561357
+
+år 24
+Total: 207,228,540 kr  
+Enheter 377.5497250726774
+
+år 25
+Total: 223,650,991 kr  
+Enheter 400.0
+
+år 26
+Total: 241,049,971 kr  
+Enheter 423.78523774371814
+
+år 27
+Total: 259,483,548 kr  
+Enheter 448.9848193237491
+
+år 28
+Total: 279,013,242 kr  
+Enheter 475.6828460010884
+
+år 29
+Total: 299,704,233 kr  
+Enheter 503.96841995794927
+
+år 30
+Total: 321,625,574 kr  
+Enheter 533.9359416680137
+
+år 31
+Total: 344,850,426 kr  
+Enheter 565.685424949238
+
+år 32
+Total: 369,456,300 kr  
+Enheter 599.3228307506727
+
+år 33
+Total: 395,525,315 kr  
+Enheter 634.9604207872798
+
+år 34
+Total: 423,144,474 kr  
+Enheter 672.7171322029716
+
+år 35
+Total: 452,405,954 kr  
+Enheter 712.7189745122715
+
+år 36
+Total: 483,407,411 kr  
+Enheter 755.0994501453547
+
+år 37
+Total: 516,252,312 kr  
+Enheter 800.0
+
+år 38
+Total: 551,050,272 kr  
+Enheter 847.5704754874363
+
+år 39
+Total: 587,917,426 kr  
+Enheter 897.9696386474982
+
+år 40
+Total: 626,976,816 kr  
+Enheter 951.3656920021768
+
+år 41
+Total: 668,358,797 kr  
+Enheter 1007.9368399158985
+
+år 42
+Total: 712,201,480 kr  
+Enheter 1067.8718833360274
+
+år 43
+Total: 758,651,183 kr  
+Enheter 1131.370849898476
+
+år 44
+Total: 807,862,930 kr  
+Enheter 1198.6456615013453
+
+år 45
+Total: 860,000,960 kr  
+Enheter 1269.9208415745595
+
+år 46
+Total: 915,239,278 kr  
+Enheter 1345.4342644059432
+
+år 47
+Total: 973,762,238 kr  
+Enheter 1425.437949024543
+
+år 48
+Total: 1,035,765,154 kr  
+Enheter 1510.1989002907094
+
+år 49
+Total: 1,101,454,955 kr  
+Enheter 1600.0
+
+år 50
+Total: 1,171,050,875 kr  
+Enheter 1695.140950974872
+
+år 51
+Total: 1,244,785,183 kr  
+Enheter 1795.9392772949973
+
+år 52
+Total: 1,322,903,962 kr  
+Enheter 1902.7313840043537
+
+år 53
+Total: 1,405,667,925 kr  
+Enheter 2015.8736798317968
+
+år 54
+Total: 1,493,353,290 kr  
+Enheter 2135.7437666720552
+
+år 55
+Total: 1,586,252,698 kr  
+Enheter 2262.741699796952
+
+år 56
+Total: 1,684,676,191 kr  
+Enheter 2397.29132300269
+
+år 57
+Total: 1,788,952,251 kr  
+Enheter 2539.8416831491195
+
+år 58
+Total: 1,899,428,887 kr  
+Enheter 2690.8685288118863
+
+år 59
+Total: 2,016,474,807 kr  
+Enheter 2850.875898049085
+
+år 60
+Total: 2,140,480,638 kr  
+Enheter 3020.3978005814197
 
 </pre>
 </div>
@@ -12031,7 +12219,6 @@ Enheter 51200
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Beskrivelse-av-Plot">Beskrivelse av Plot<a class="anchor-link" href="#Beskrivelse-av-Plot">&#182;</a></h3><p>Her kommer det en beskrivelse</p>
 
 </div>
 </div>
