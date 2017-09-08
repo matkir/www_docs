@@ -11775,13 +11775,13 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">locale</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="o">*</span>
-<span class="n">aar</span><span class="o">=</span><span class="mi">12</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#ant år vi vil modelere </span>
+<span class="n">aar</span><span class="o">=</span><span class="mi">12</span><span class="o">*</span><span class="mi">5</span> <span class="c1">#ant mnd vi vil modelere </span>
 
 
 <span class="n">solgte_prover</span><span class="o">=</span><span class="n">zeros</span><span class="p">(</span><span class="n">aar</span><span class="p">)</span>
@@ -11791,17 +11791,16 @@ div#notebook {
 
 
 
-<span class="n">solgte_enheter</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">12</span><span class="p">)</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aar</span><span class="p">)])</span>
-
+<span class="n">solgte_enheter</span><span class="o">=</span><span class="n">array</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">i</span><span class="o">/</span><span class="mi">12</span><span class="p">))</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aar</span><span class="p">)])</span>
 
 <span class="n">pris_per_modul</span><span class="o">=</span><span class="mi">1000</span> <span class="c1">#kr inntekt per modul (salgspris-innkjøpspris)</span>
 <span class="n">pris_per_prove</span><span class="o">=</span><span class="mi">40</span> <span class="c1">#kr inntekt per prove (salgspris-innkjøpspris)</span>
-<span class="n">prover</span><span class="o">=</span> <span class="mi">1000</span> <span class="c1">#ant forventet salg per enhet per år</span>
+<span class="n">prover</span><span class="o">=</span> <span class="mi">365</span> <span class="c1">#ant forventet salg per enhet per år</span>
 <span class="n">lisens_pris</span><span class="o">=</span><span class="mi">1000</span> <span class="c1">#kr per lisens per aar</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="n">solgte_enheter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;antall enheter solgt per år&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;antall enheter solgt per mnd&quot;</span><span class="p">)</span>
 
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">aar</span><span class="p">):</span>
@@ -11833,7 +11832,7 @@ div#notebook {
 <span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">inntekt_per_aar</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;år </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">Total: </span><span class="si">{1:,}</span><span class="s2"> kr  </span><span class="se">\n</span><span class="s2">Enheter </span><span class="si">{2}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">solgte_enheter</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mnd </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">Total: </span><span class="si">{1:,}</span><span class="s2"> kr  </span><span class="se">\n</span><span class="s2">Enheter </span><span class="si">{2}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="n">solgte_enheter</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]]))</span>
 </pre></div>
 
 </div>
@@ -11848,19 +11847,11 @@ div#notebook {
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[  100.           105.94630944   112.24620483   118.9207115    125.99210499
-   133.48398542   141.42135624   149.83070769   158.7401052    168.17928305
-   178.17974363   188.77486254   200.           211.89261887   224.49240966
-   237.841423     251.98420998   266.96797083   282.84271247   299.66141538
-   317.48021039   336.3585661    356.35948726   377.54972507   400.
-   423.78523774   448.98481932   475.682846     503.96841996   533.93594167
-   565.68542495   599.32283075   634.96042079   672.7171322    712.71897451
-   755.09945015   800.           847.57047549   897.96963865   951.365692
-  1007.93683992  1067.87188334  1131.3708499   1198.6456615   1269.92084157
-  1345.43426441  1425.43794902  1510.19890029  1600.          1695.14095097
-  1795.93927729  1902.731384    2015.87367983  2135.74376667  2262.7416998
-  2397.291323    2539.84168315  2690.86852881  2850.87589805  3020.39780058]
-antall enheter solgt per år
+<pre>[ 100  105  112  118  125  133  141  149  158  168  178  188  200  211  224
+  237  251  266  282  299  317  336  356  377  400  423  448  475  503  533
+  565  599  634  672  712  755  800  847  897  951 1007 1067 1131 1198 1269
+ 1345 1425 1510 1600 1695 1795 1902 2015 2135 2262 2397 2539 2690 2850 3020]
+antall enheter solgt per mnd
 </pre>
 </div>
 </div>
@@ -11872,90 +11863,90 @@ antall enheter solgt per år
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,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
-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
-ecD45+LSkySpkUEhSWo0r0GxadIFjJBzmU7OZfrMyjxgzHOZyz0KSdLg5rWjkCQNaK6CIslJSW5L
-cnuSsyddz7CSXJRkW5KblowdlOTjSb7a//xzk6xxEEkOTfKpJLckuTnJWf3xLs7lwUk+n+TG/lxe
-1R/v3Fx2SrIqyReTXNU/7uRcktyZ5MtJvpRkS3+sq3N5RJLLk3wlya1JjhnnXOYmKJKsAs4HngGs
-B05Lsn6yVQ3tYuCkZWNnA9dW1eHAtf3jafdD4C+raj1wNPCy/p9FF+fyfeCEqnoycARwUpKj6eZc
-djoLuHXJcZfncnxVHbHkVNKuzuXNwDVV9QTgyfT+fMY3l6qaiw/gGOCjS47PAc6ZdF17MI+1wE1L
-jm8DDu4/Phi4bdI17sGc/hk4setzAQ4AvgA8tatzAQ7p/6dzAnBVf6yrc7kTWL1srHNzARaA/6G/
-pzyJucxNRwE8Brh7yfHW/ljXPaqqvtZ//HXgUZMsZlhJ1gJHAv9JR+fSX6r5ErAN+HhVdXYuwJuA
-vwF+tGSsq3Mp4BNJbkiysT/WxbkcBmwH3tlfErwgyUMZ41zmKShmXvV+tejMaWxJHgZ8EPjzqrp/
-6de6NJeqeqCqjqD32/hRSZ647OudmEuSk4FtVXXDSs/pylz6ju3/uTyD3vLm05d+sUNz2Rd4CvD2
-qjoS+C7Llpnanss8BcU9wKFLjg/pj3XdN5IcDND/vG3C9QwkyYPohcQ/VdUV/eFOzmWnqvpf4FP0
-9pG6OJdfA56V5E7gfcAJSS6lm3Ohqu7pf94GfAg4im7OZSuwtd+pAlxOLzjGNpd5CorrgcOTHJZk
-P+BU4MoJ1zQKVwKn9x+fTm+9f6olCXAhcGtVvXHJl7o4lzVJHtF//BB6ey1foYNzqapzquqQqlpL
-79/HJ6vqeXRwLkkemuTAnY+B3wZuooNzqaqvA3cneXx/6DeBWxjjXObqgrskv0tvDXYVcFFVvWbC
-JQ0lyXuB4+jdOfIbwLnAh4H3A4+ldwfdP6iq+yZV4yCSHAt8BvgyP1kLfzm9fYquzeVXgEvo/Z3a
-B3h/Vb06ySPp2FyWSnIc8FdVdXIX55LkcfS6COgt3bynql7TxbkAJDkCuADYD7gDeAH9v2+MYS5z
-FRSSpOHN09KTJGkPGBSSpEYGhSSpkUEhjViS/ZNcmeTCSdcijYJBIY3eifTORvtakl+edDHS3jIo
-pNFL/2Of/mep0zw9VhqxJPvTu+p8e1W9YBdfX1VVD4y/MmnP2FFIo3cZvbt5HrXzZnRJvpPkvCQ3
-0ruTsdQZdhTSiCU5qKru69/S43rgN4B7gT+sqvdPtjppePtOugBpBp2Z5Pf6jw8FDgceoLccJXWO
-QSGNUP8eSb8FHFNV30vyr8CDgf9zX0Jd5R6FNFoLwLf6IfEEem/1KnWaQSGN1jXAvkluBV4HfG7C
-9Uh7zc1sSVIjOwpJUiODQpLUyKCQJDUyKCRJjQwKSVIjg0KS1MigkCQ1MigkSY3+HzGB6UNNuPS3
-AAAAAElFTkSuQmCC
+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
+gg==
 "
 >
 </div>
@@ -11966,245 +11957,245 @@ AAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>år 1
-Total: 4,200,000 kr  
-Enheter 100.0
+<pre>mnd 1
+Total: 1,660,000 kr  
+Enheter 100
 
-år 2
-Total: 8,549,744 kr  
-Enheter 105.94630943592954
+mnd 2
+Total: 3,303,000 kr  
+Enheter 105
 
-år 3
-Total: 13,158,139 kr  
-Enheter 112.2462048309373
+mnd 3
+Total: 5,057,200 kr  
+Enheter 112
 
-år 4
-Total: 18,040,562 kr  
-Enheter 118.9207115002721
+mnd 4
+Total: 6,904,000 kr  
+Enheter 118
 
-år 5
-Total: 23,213,310 kr  
-Enheter 125.99210498948732
+mnd 5
+Total: 8,861,000 kr  
+Enheter 125
 
-år 6
-Total: 28,693,645 kr  
-Enheter 133.48398541700342
+mnd 6
+Total: 10,943,800 kr  
+Enheter 133
 
-år 7
-Total: 34,499,858 kr  
-Enheter 141.4213562373095
+mnd 7
+Total: 13,151,400 kr  
+Enheter 141
 
-år 8
-Total: 40,651,327 kr  
-Enheter 149.83070768766817
+mnd 8
+Total: 15,483,800 kr  
+Enheter 149
 
-år 9
-Total: 47,168,581 kr  
-Enheter 158.74010519681994
+mnd 9
+Total: 17,957,600 kr  
+Enheter 158
 
-år 10
-Total: 54,073,370 kr  
-Enheter 168.1792830507429
+mnd 10
+Total: 20,588,400 kr  
+Enheter 168
 
-år 11
-Total: 61,388,740 kr  
-Enheter 178.17974362806785
+mnd 11
+Total: 23,375,200 kr  
+Enheter 178
 
-år 12
-Total: 69,139,105 kr  
-Enheter 188.77486253633867
+mnd 12
+Total: 26,318,000 kr  
+Enheter 188
 
-år 13
-Total: 77,350,330 kr  
-Enheter 200.0
+mnd 13
+Total: 29,450,000 kr  
+Enheter 200
 
-år 14
-Total: 86,049,820 kr  
-Enheter 211.89261887185907
+mnd 14
+Total: 32,752,600 kr  
+Enheter 211
 
-år 15
-Total: 95,266,608 kr  
-Enheter 224.4924096618746
+mnd 15
+Total: 36,260,000 kr  
+Enheter 224
 
-år 16
-Total: 105,031,456 kr  
-Enheter 237.8414230005442
+mnd 16
+Total: 39,970,200 kr  
+Enheter 237
 
-år 17
-Total: 115,376,951 kr  
-Enheter 251.98420997897463
+mnd 17
+Total: 43,899,800 kr  
+Enheter 251
 
-år 18
-Total: 126,337,622 kr  
-Enheter 266.96797083400685
+mnd 18
+Total: 48,064,400 kr  
+Enheter 266
 
-år 19
-Total: 137,950,048 kr  
-Enheter 282.842712474619
+mnd 19
+Total: 52,479,600 kr  
+Enheter 282
 
-år 20
-Total: 150,252,984 kr  
-Enheter 299.66141537533633
+mnd 20
+Total: 57,161,000 kr  
+Enheter 299
 
-år 21
-Total: 163,287,492 kr  
-Enheter 317.48021039363994
+mnd 21
+Total: 62,124,200 kr  
+Enheter 317
 
-år 22
-Total: 177,097,071 kr  
-Enheter 336.3585661014858
+mnd 22
+Total: 67,384,800 kr  
+Enheter 336
 
-år 23
-Total: 191,727,811 kr  
-Enheter 356.3594872561357
+mnd 23
+Total: 72,958,400 kr  
+Enheter 356
 
-år 24
-Total: 207,228,540 kr  
-Enheter 377.5497250726774
+mnd 24
+Total: 78,860,600 kr  
+Enheter 377
 
-år 25
-Total: 223,650,991 kr  
-Enheter 400.0
+mnd 25
+Total: 85,123,600 kr  
+Enheter 400
 
-år 26
-Total: 241,049,971 kr  
-Enheter 423.78523774371814
+mnd 26
+Total: 91,745,400 kr  
+Enheter 423
 
-år 27
-Total: 259,483,548 kr  
-Enheter 448.9848193237491
+mnd 27
+Total: 98,759,200 kr  
+Enheter 448
 
-år 28
-Total: 279,013,242 kr  
-Enheter 475.6828460010884
+mnd 28
+Total: 106,196,200 kr  
+Enheter 475
 
-år 29
-Total: 299,704,233 kr  
-Enheter 503.96841995794927
+mnd 29
+Total: 114,071,000 kr  
+Enheter 503
 
-år 30
-Total: 321,625,574 kr  
-Enheter 533.9359416680137
+mnd 30
+Total: 122,415,800 kr  
+Enheter 533
 
-år 31
-Total: 344,850,426 kr  
-Enheter 565.685424949238
+mnd 31
+Total: 131,261,800 kr  
+Enheter 565
 
-år 32
-Total: 369,456,300 kr  
-Enheter 599.3228307506727
+mnd 32
+Total: 140,640,200 kr  
+Enheter 599
 
-år 33
-Total: 395,525,315 kr  
-Enheter 634.9604207872798
+mnd 33
+Total: 150,565,600 kr  
+Enheter 634
 
-år 34
-Total: 423,144,474 kr  
-Enheter 672.7171322029716
+mnd 34
+Total: 161,086,800 kr  
+Enheter 672
 
-år 35
-Total: 452,405,954 kr  
-Enheter 712.7189745122715
+mnd 35
+Total: 172,234,000 kr  
+Enheter 712
 
-år 36
-Total: 483,407,411 kr  
-Enheter 755.0994501453547
+mnd 36
+Total: 184,055,000 kr  
+Enheter 755
 
-år 37
-Total: 516,252,312 kr  
-Enheter 800.0
+mnd 37
+Total: 196,580,000 kr  
+Enheter 800
 
-år 38
-Total: 551,050,272 kr  
-Enheter 847.5704754874363
+mnd 38
+Total: 209,840,200 kr  
+Enheter 847
 
-år 39
-Total: 587,917,426 kr  
-Enheter 897.9696386474982
+mnd 39
+Total: 223,883,400 kr  
+Enheter 897
 
-år 40
-Total: 626,976,816 kr  
-Enheter 951.3656920021768
+mnd 40
+Total: 238,773,000 kr  
+Enheter 951
 
-år 41
-Total: 668,358,797 kr  
-Enheter 1007.9368399158985
+mnd 41
+Total: 254,538,200 kr  
+Enheter 1007
 
-år 42
-Total: 712,201,480 kr  
-Enheter 1067.8718833360274
+mnd 42
+Total: 271,243,400 kr  
+Enheter 1067
 
-år 43
-Total: 758,651,183 kr  
-Enheter 1131.370849898476
+mnd 43
+Total: 288,951,000 kr  
+Enheter 1131
 
-år 44
-Total: 807,862,930 kr  
-Enheter 1198.6456615013453
+mnd 44
+Total: 307,706,800 kr  
+Enheter 1198
 
-år 45
-Total: 860,000,960 kr  
-Enheter 1269.9208415745595
+mnd 45
+Total: 327,574,200 kr  
+Enheter 1269
 
-år 46
-Total: 915,239,278 kr  
-Enheter 1345.4342644059432
+mnd 46
+Total: 348,632,200 kr  
+Enheter 1345
 
-år 47
-Total: 973,762,238 kr  
-Enheter 1425.437949024543
+mnd 47
+Total: 370,942,200 kr  
+Enheter 1425
 
-år 48
-Total: 1,035,765,154 kr  
-Enheter 1510.1989002907094
+mnd 48
+Total: 394,583,200 kr  
+Enheter 1510
 
-år 49
-Total: 1,101,454,955 kr  
-Enheter 1600.0
+mnd 49
+Total: 419,633,200 kr  
+Enheter 1600
 
-år 50
-Total: 1,171,050,875 kr  
-Enheter 1695.140950974872
+mnd 50
+Total: 446,170,200 kr  
+Enheter 1695
 
-år 51
-Total: 1,244,785,183 kr  
-Enheter 1795.9392772949973
+mnd 51
+Total: 474,272,200 kr  
+Enheter 1795
 
-år 52
-Total: 1,322,903,962 kr  
-Enheter 1902.7313840043537
+mnd 52
+Total: 504,050,400 kr  
+Enheter 1902
 
-år 53
-Total: 1,405,667,925 kr  
-Enheter 2015.8736798317968
+mnd 53
+Total: 535,597,400 kr  
+Enheter 2015
 
-år 54
-Total: 1,493,353,290 kr  
-Enheter 2135.7437666720552
+mnd 54
+Total: 569,023,400 kr  
+Enheter 2135
 
-år 55
-Total: 1,586,252,698 kr  
-Enheter 2262.741699796952
+mnd 55
+Total: 604,437,600 kr  
+Enheter 2262
 
-år 56
-Total: 1,684,676,191 kr  
-Enheter 2397.29132300269
+mnd 56
+Total: 641,965,800 kr  
+Enheter 2397
 
-år 57
-Total: 1,788,952,251 kr  
-Enheter 2539.8416831491195
+mnd 57
+Total: 681,716,200 kr  
+Enheter 2539
 
-år 58
-Total: 1,899,428,887 kr  
-Enheter 2690.8685288118863
+mnd 58
+Total: 723,831,200 kr  
+Enheter 2690
 
-år 59
-Total: 2,016,474,807 kr  
-Enheter 2850.875898049085
+mnd 59
+Total: 768,451,200 kr  
+Enheter 2850
 
-år 60
-Total: 2,140,480,638 kr  
-Enheter 3020.3978005814197
+mnd 60
+Total: 815,733,200 kr  
+Enheter 3020
 
 </pre>
 </div>
@@ -12213,15 +12204,6 @@ Enheter 3020.3978005814197
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-</div>
-</div>
 </div>
     </div>
   </div>
